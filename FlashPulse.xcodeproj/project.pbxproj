@@ -7,20 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED74248A2D9908530087968B /* AddCardSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7424892D9908530087968B /* AddCardSheet.swift */; };
+		ED74248D2D99992E0087968B /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED74248C2D99992E0087968B /* ColorExtension.swift */; };
 		EDA7F7C62D9847FD004C7873 /* FlashPulseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7F7C52D9847FD004C7873 /* FlashPulseApp.swift */; };
-		EDA7F7C82D9847FD004C7873 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7F7C72D9847FD004C7873 /* ContentView.swift */; };
-		EDA7F7CA2D9847FD004C7873 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7F7C92D9847FD004C7873 /* Item.swift */; };
+		EDA7F7C82D9847FD004C7873 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7F7C72D9847FD004C7873 /* MainView.swift */; };
+		EDA7F7CA2D9847FD004C7873 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7F7C92D9847FD004C7873 /* Card.swift */; };
 		EDA7F7CC2D9847FF004C7873 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDA7F7CB2D9847FF004C7873 /* Assets.xcassets */; };
 		EDA7F7CF2D9847FF004C7873 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDA7F7CE2D9847FF004C7873 /* Preview Assets.xcassets */; };
+		EDA7F7D62D984B4E004C7873 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7F7D52D984B4E004C7873 /* Topic.swift */; };
+		EDA7F7D82D98526E004C7873 /* TopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7F7D72D98526E004C7873 /* TopicView.swift */; };
+		EDA7F7DD2D9862FA004C7873 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7F7DC2D9862FA004C7873 /* TopicCell.swift */; };
+		EDA7F7E12D986A5F004C7873 /* TopicsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7F7E02D986A5F004C7873 /* TopicsTab.swift */; };
+		EDA7F7E32D986A9E004C7873 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7F7E22D986A9E004C7873 /* Tabs.swift */; };
+		EDA7F7E52D986B6A004C7873 /* StatsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7F7E42D986B6A004C7873 /* StatsTab.swift */; };
+		EDA7F7E72D98724D004C7873 /* TopicDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7F7E62D98724D004C7873 /* TopicDataPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED7424892D9908530087968B /* AddCardSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardSheet.swift; sourceTree = "<group>"; };
+		ED74248C2D99992E0087968B /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		EDA7F7C22D9847FD004C7873 /* FlashPulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashPulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDA7F7C52D9847FD004C7873 /* FlashPulseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashPulseApp.swift; sourceTree = "<group>"; };
-		EDA7F7C72D9847FD004C7873 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		EDA7F7C92D9847FD004C7873 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		EDA7F7C72D9847FD004C7873 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		EDA7F7C92D9847FD004C7873 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		EDA7F7CB2D9847FF004C7873 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDA7F7CE2D9847FF004C7873 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EDA7F7D52D984B4E004C7873 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		EDA7F7D72D98526E004C7873 /* TopicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicView.swift; sourceTree = "<group>"; };
+		EDA7F7DC2D9862FA004C7873 /* TopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
+		EDA7F7E02D986A5F004C7873 /* TopicsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsTab.swift; sourceTree = "<group>"; };
+		EDA7F7E22D986A9E004C7873 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
+		EDA7F7E42D986B6A004C7873 /* StatsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTab.swift; sourceTree = "<group>"; };
+		EDA7F7E62D98724D004C7873 /* TopicDataPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDataPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +52,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED74248B2D9999170087968B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED74248C2D99992E0087968B /* ColorExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ED7424902D99ADA80087968B /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
 		EDA7F7B92D9847FD004C7873 = {
 			isa = PBXGroup;
 			children = (
@@ -54,8 +87,11 @@
 			isa = PBXGroup;
 			children = (
 				EDA7F7C52D9847FD004C7873 /* FlashPulseApp.swift */,
-				EDA7F7C72D9847FD004C7873 /* ContentView.swift */,
-				EDA7F7C92D9847FD004C7873 /* Item.swift */,
+				EDA7F7DA2D9853B0004C7873 /* View */,
+				EDA7F7D92D9853A6004C7873 /* Model */,
+				ED7424902D99ADA80087968B /* View Model */,
+				ED74248B2D9999170087968B /* Extensions */,
+				EDA7F7DB2D9853CB004C7873 /* ViewModel */,
 				EDA7F7CB2D9847FF004C7873 /* Assets.xcassets */,
 				EDA7F7CD2D9847FF004C7873 /* Preview Content */,
 			);
@@ -68,6 +104,53 @@
 				EDA7F7CE2D9847FF004C7873 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EDA7F7D92D9853A6004C7873 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EDA7F7D52D984B4E004C7873 /* Topic.swift */,
+				EDA7F7C92D9847FD004C7873 /* Card.swift */,
+				EDA7F7E62D98724D004C7873 /* TopicDataPoint.swift */,
+				EDA7F7E22D986A9E004C7873 /* Tabs.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EDA7F7DA2D9853B0004C7873 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDA7F7C72D9847FD004C7873 /* MainView.swift */,
+				EDA7F7E82D987B66004C7873 /* Topics Tab */,
+				EDA7F7E92D987B6F004C7873 /* Stats Tab */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EDA7F7DB2D9853CB004C7873 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EDA7F7E82D987B66004C7873 /* Topics Tab */ = {
+			isa = PBXGroup;
+			children = (
+				EDA7F7E02D986A5F004C7873 /* TopicsTab.swift */,
+				EDA7F7DC2D9862FA004C7873 /* TopicCell.swift */,
+				EDA7F7D72D98526E004C7873 /* TopicView.swift */,
+				ED7424892D9908530087968B /* AddCardSheet.swift */,
+			);
+			path = "Topics Tab";
+			sourceTree = "<group>";
+		};
+		EDA7F7E92D987B6F004C7873 /* Stats Tab */ = {
+			isa = PBXGroup;
+			children = (
+				EDA7F7E42D986B6A004C7873 /* StatsTab.swift */,
+			);
+			path = "Stats Tab";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,9 +223,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDA7F7C82D9847FD004C7873 /* ContentView.swift in Sources */,
-				EDA7F7CA2D9847FD004C7873 /* Item.swift in Sources */,
+				EDA7F7C82D9847FD004C7873 /* MainView.swift in Sources */,
+				EDA7F7D62D984B4E004C7873 /* Topic.swift in Sources */,
+				EDA7F7DD2D9862FA004C7873 /* TopicCell.swift in Sources */,
+				ED74248D2D99992E0087968B /* ColorExtension.swift in Sources */,
+				EDA7F7E12D986A5F004C7873 /* TopicsTab.swift in Sources */,
+				EDA7F7CA2D9847FD004C7873 /* Card.swift in Sources */,
 				EDA7F7C62D9847FD004C7873 /* FlashPulseApp.swift in Sources */,
+				EDA7F7D82D98526E004C7873 /* TopicView.swift in Sources */,
+				EDA7F7E72D98724D004C7873 /* TopicDataPoint.swift in Sources */,
+				ED74248A2D9908530087968B /* AddCardSheet.swift in Sources */,
+				EDA7F7E32D986A9E004C7873 /* Tabs.swift in Sources */,
+				EDA7F7E52D986B6A004C7873 /* StatsTab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +376,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -313,6 +406,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
