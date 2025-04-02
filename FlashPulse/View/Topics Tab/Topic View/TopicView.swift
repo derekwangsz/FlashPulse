@@ -66,7 +66,7 @@ struct TopicView: View {
             AddCardSheet()
         }
         .fullScreenCover(isPresented: $startQuiz) {
-            QuizView(topic: topic)
+            QuizView(cards: topic.cards)
         }
         .navigationBarBackButtonHidden()
         .ignoresSafeArea()

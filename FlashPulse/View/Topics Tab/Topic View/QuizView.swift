@@ -15,19 +15,47 @@ struct QuizView: View {
     
     @Environment(\.dismiss) private var dismiss
     
-    let topic: Topic
+    var cards: [Card]
+    @State private var displayedCards: [Card] = []
+    
+    
+    init(cards: [Card]) {
+        // initialize the state with passed in cards -> we want @State cards list just to update the view
+        self.cards = cards
+        _displayedCards = State(initialValue: cards)
+    }
     
     var body: some View {
         VStack {
-            ForEach(0..<topic.cards.count, id: \.self) { i in
-                QuizCard(card: topic.cards[i])
-                    .stacked(at: i, in: topic.cards.count)
+            Spacer()
+            
+            ForEach(0..<displayedCards.count, id: \.self) { i in
+                QuizCard(card: cards[i])
+                    .stacked(at: i, in: cards.count)
             }
-            Button("Exit") {
-                dismiss()
+            
+            Spacer()
+            
+            VStack {
+                HStack {
+                    
+                    Button("DON'T KNOW") {
+                        
+                    }
+                    .buttonStyle(.myAppSecondaryButton)
+                    
+                    Button("KNOW") {
+                        
+                    }
+                    .buttonStyle(.myAppSecondaryButton)
+                }
+                
+                Button("Exit") {
+                    dismiss()
+                }
+                .buttonStyle(.myAppPrimaryButton)
             }
         }
-        
     }
 }
 
@@ -40,5 +68,5 @@ extension View {
 }
 
 #Preview {
-    QuizView(topic: Topic.example)
+    QuizView(cards: Topic.example.cards)
 }

@@ -19,13 +19,25 @@ struct QuizCard: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 15)
-                .opacity(0.3)
+            //            RoundedRectangle(cornerRadius: 15, style: .continuous)
+            //                .foregroundStyle(.white)
+            //                .shadow(radius: 10)
             
             VStack {
                 // card
-                VStack {
-                    Text(card.prompt)
+                Text(card.prompt)
+                    .font(.headline)
+                    .padding(.bottom)
+                
+                // buttons
+                Group {
+                    if card.hintImage != nil && !isShowingHintImage {
+                        Button("Show hint image") {
+                            withAnimation(.bouncy) {
+                                isShowingHintImage = true
+                            }
+                        }
+                    }
                     
                     if isShowingHintImage {
                         card.hintImage!
@@ -34,45 +46,43 @@ struct QuizCard: View {
                             .clipShape(RoundedRectangle(cornerRadius: 15))
                     }
                     
-                    if isShowingHint {
-                        Text(card.hint)
-                    }
-                    
                 }
                 
-                // buttons
-                VStack {
-                    if card.hintImage != nil && !isShowingHintImage {
-                        Button("Show hint image") {
-                            isShowingHintImage = true
-                        }
-                    }
-                    
+                Group {
                     if card.hintAvailable && !isShowingHint {
                         Button("Show hint") {
                             isShowingHint = true
                         }
                     }
                     
-                    
-                    if !isShowingAnswer {
-                        Button("SHOW ANSWER") {
-                            isShowingAnswer = true
-                        }
-                        .padding(.top)
+                    if isShowingHint {
+                        Text(card.hint)
                     }
-                    
                 }
                 
                 // ANSWER TEXT
-                if isShowingAnswer {
-                    Text(card.answer)
-                        .font(.headline)
+                Group {
+                    if !isShowingAnswer {
+                        Button("SHOW ANSWER") {
+                            isShowingAnswer = true
+                            
+                        }
                         .padding(.top)
+                    }
+                    if isShowingAnswer {
+                        Text(card.answer)
+                            .font(.headline)
+                            .padding(.top)
+                    }
                 }
-                    
             }
+            .multilineTextAlignment(.center)
         }
+        .padding()
+        .background()
+        .clipShape(RoundedRectangle(cornerRadius: 15))
+        .shadow(radius: 10)
+        
     }
 }
 
