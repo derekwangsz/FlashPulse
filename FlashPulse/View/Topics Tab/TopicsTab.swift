@@ -10,6 +10,9 @@ import SwiftData
 import UIKit
 
 struct TopicsTab: View {
+    
+    //MARK: - Add swipe to delete functionality from iJournal -> with confirmation dialog because it's a quite big operation
+    
     @Environment(\.modelContext) private var modelContext
     @Query private var topics: [Topic]
     
@@ -52,8 +55,8 @@ struct TopicsTab: View {
     
     
     private func addItem() {
+        let newTopic = Topic.example
         withAnimation {
-            let newTopic = Topic.example
             modelContext.insert(newTopic)
         }
     }

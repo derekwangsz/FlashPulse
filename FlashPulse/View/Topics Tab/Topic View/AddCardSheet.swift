@@ -41,6 +41,7 @@ struct AddCardSheet: View {
                     save()
                     dismiss()
                 }
+                .disabled(saveButtonDisabled())
                 .font(.headline)
                 
             }
@@ -111,6 +112,10 @@ struct AddCardSheet: View {
         }
     }
     
+    // disables saveButton when prompt or answer is not set to accepted format
+    func saveButtonDisabled() -> Bool {
+        prompt.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || answer.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
     
     func fetchImage() async {
         if let data = try? await photoPickerItem?.loadTransferable(type: Data.self) {

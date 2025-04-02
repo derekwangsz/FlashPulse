@@ -21,6 +21,8 @@
 		EDA7F7E32D986A9E004C7873 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7F7E22D986A9E004C7873 /* Tabs.swift */; };
 		EDA7F7E52D986B6A004C7873 /* StatsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7F7E42D986B6A004C7873 /* StatsTab.swift */; };
 		EDA7F7E72D98724D004C7873 /* TopicDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7F7E62D98724D004C7873 /* TopicDataPoint.swift */; };
+		EDDB96032D9CEDBB00AE44E7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDB96022D9CEDBB00AE44E7 /* CardView.swift */; };
+		EDDB96072D9CF27400AE44E7 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDB96062D9CF27400AE44E7 /* QuizView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		EDA7F7E22D986A9E004C7873 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		EDA7F7E42D986B6A004C7873 /* StatsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTab.swift; sourceTree = "<group>"; };
 		EDA7F7E62D98724D004C7873 /* TopicDataPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDataPoint.swift; sourceTree = "<group>"; };
+		EDDB96022D9CEDBB00AE44E7 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		EDDB96062D9CF27400AE44E7 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +143,7 @@
 			children = (
 				EDA7F7E02D986A5F004C7873 /* TopicsTab.swift */,
 				EDA7F7DC2D9862FA004C7873 /* TopicCell.swift */,
-				EDA7F7D72D98526E004C7873 /* TopicView.swift */,
-				ED7424892D9908530087968B /* AddCardSheet.swift */,
+				EDDB96052D9CF25E00AE44E7 /* Topic View */,
 			);
 			path = "Topics Tab";
 			sourceTree = "<group>";
@@ -151,6 +154,17 @@
 				EDA7F7E42D986B6A004C7873 /* StatsTab.swift */,
 			);
 			path = "Stats Tab";
+			sourceTree = "<group>";
+		};
+		EDDB96052D9CF25E00AE44E7 /* Topic View */ = {
+			isa = PBXGroup;
+			children = (
+				EDA7F7D72D98526E004C7873 /* TopicView.swift */,
+				EDDB96022D9CEDBB00AE44E7 /* CardView.swift */,
+				EDDB96062D9CF27400AE44E7 /* QuizView.swift */,
+				ED7424892D9908530087968B /* AddCardSheet.swift */,
+			);
+			path = "Topic View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,9 +244,11 @@
 				EDA7F7E12D986A5F004C7873 /* TopicsTab.swift in Sources */,
 				EDA7F7CA2D9847FD004C7873 /* Card.swift in Sources */,
 				EDA7F7C62D9847FD004C7873 /* FlashPulseApp.swift in Sources */,
+				EDDB96032D9CEDBB00AE44E7 /* CardView.swift in Sources */,
 				EDA7F7D82D98526E004C7873 /* TopicView.swift in Sources */,
 				EDA7F7E72D98724D004C7873 /* TopicDataPoint.swift in Sources */,
 				ED74248A2D9908530087968B /* AddCardSheet.swift in Sources */,
+				EDDB96072D9CF27400AE44E7 /* QuizView.swift in Sources */,
 				EDA7F7E32D986A9E004C7873 /* Tabs.swift in Sources */,
 				EDA7F7E52D986B6A004C7873 /* StatsTab.swift in Sources */,
 			);
