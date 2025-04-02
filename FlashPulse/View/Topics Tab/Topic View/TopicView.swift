@@ -42,7 +42,7 @@ struct TopicView: View {
             List {
                 ForEach(topic.cards) { card in
                     HStack {
-                        CardView(card: card)
+                        TopicCard(card: card)
                             
                     }
                 }

@@ -14,7 +14,7 @@ final class TopicDataPoint {
     var accuracyPercentage: Int
     var date: Date
     
-    var topic: Topic? // every TopicData belongs to a topic
+    var topic: Topic? // every TopicDataPoint belongs to a topic
     
     init(attempt: Int, accuracyPercentage: Int, date: Date = .now) {
         self.attempt = attempt

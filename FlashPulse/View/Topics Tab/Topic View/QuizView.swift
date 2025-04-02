@@ -11,13 +11,18 @@ struct QuizView: View {
     
     //MARK: - In the quiz view, we need to be able to show prompt, hint if there is one, hint image if there is one, and the answer when requested
     
+    //MARK: - Create a TopicDataPoint and add to topic when the quiz ends
+    
     @Environment(\.dismiss) private var dismiss
     
     let topic: Topic
     
     var body: some View {
         VStack {
-            Text("Quiz Mode")
+            ForEach(0..<topic.cards.count, id: \.self) { i in
+                QuizCard(card: topic.cards[i])
+                    .stacked(at: i, in: topic.cards.count)
+            }
             Button("Exit") {
                 dismiss()
             }

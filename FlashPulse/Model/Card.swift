@@ -8,6 +8,7 @@
 import Foundation
 import SwiftData
 import UIKit
+import SwiftUICore
 
 @Model
 final class Card {
@@ -16,6 +17,17 @@ final class Card {
     var hint: String
     var hintImageData: Data?
     var answer: String
+    
+    var hintAvailable: Bool {
+        !hint.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+    
+    var hintImage: Image? {
+        guard let data = hintImageData else { return nil }
+        guard let uiImage = UIImage(data: data) else { return nil }
+        return Image(uiImage: uiImage)
+    }
+    
     
     var topic: Topic? // every Card belongs to a Topic
     
