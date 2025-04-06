@@ -58,7 +58,6 @@ struct TopicView: View {
             .background(.thinMaterial)
             .clipShape(Capsule())
             .shadow(radius: 2, x: 3, y: 7)
-            .padding(.bottom, 50)
             .padding(.top, 10)
             
         }
@@ -66,10 +65,10 @@ struct TopicView: View {
             AddCardSheet()
         }
         .fullScreenCover(isPresented: $startQuiz) {
-            QuizView(cards: topic.cards)
+            QuizView()
         }
         .navigationBarBackButtonHidden()
-        .ignoresSafeArea()
+        .ignoresSafeArea(.all, edges: .top)
         .statusBarHidden()
 //        .onScrollGeometryChange(for: Bool.self) { geometry in
 //            geometry.contentOffset.y < -50

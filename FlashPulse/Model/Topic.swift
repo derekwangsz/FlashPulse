@@ -11,6 +11,7 @@ import SwiftData
 @Model
 final class Topic {
     var name: String
+    var numAttempted = 0
     @Relationship(deleteRule: .cascade, inverse: \Card.topic) var cards: [Card] = [Card]()
     // Every Topic has an array of Card objects
     

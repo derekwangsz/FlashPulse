@@ -78,6 +78,7 @@ struct QuizCard: View {
             }
             .multilineTextAlignment(.center)
         }
+        .frame(maxWidth: .infinity)
         .padding()
         .background()
         .clipShape(RoundedRectangle(cornerRadius: 15))

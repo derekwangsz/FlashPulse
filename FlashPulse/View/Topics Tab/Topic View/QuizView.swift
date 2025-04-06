@@ -14,38 +14,35 @@ struct QuizView: View {
     //MARK: - Create a TopicDataPoint and add to topic when the quiz ends
     
     @Environment(\.dismiss) private var dismiss
+    @Environment(Topic.self) private var topic
     
-    var cards: [Card]
     @State private var displayedCards: [Card] = []
     
-    
-    init(cards: [Card]) {
-        // initialize the state with passed in cards -> we want @State cards list just to update the view
-        self.cards = cards
-        _displayedCards = State(initialValue: cards)
-    }
+    @State private var numKnown = 0
     
     var body: some View {
         VStack {
             Spacer()
             
-            ForEach(0..<displayedCards.count, id: \.self) { i in
-                QuizCard(card: cards[i])
-                    .stacked(at: i, in: cards.count)
+            ZStack {
+                ForEach(0..<displayedCards.count, id: \.self) { i in
+                    QuizCard(card: displayedCards[0])
+                        .offset(CGSize(width: 0, height: i * 10))
+                }
             }
-            
             Spacer()
             
             VStack {
                 HStack {
                     
                     Button("DON'T KNOW") {
-                        
+                        removeCard()
                     }
                     .buttonStyle(.myAppSecondaryButton)
                     
                     Button("KNOW") {
-                        
+                        numKnown += 1
+                        removeCard()
                     }
                     .buttonStyle(.myAppSecondaryButton)
                 }
@@ -56,8 +53,29 @@ struct QuizView: View {
                 .buttonStyle(.myAppPrimaryButton)
             }
         }
+        .onAppear {
+            displayedCards = topic.cards.shuffled()
+        }
+    }
+    
+    
+    
+    func removeCard() {
+        withAnimation {
+            displayedCards.removeFirst(1)
+        }
+        if displayedCards.isEmpty {
+            // save statistics and dismiss
+            topic.numAttempted += 1
+            let dataPoint = TopicDataPoint(attempt: topic.numAttempted, accuracyPercentage: numKnown / topic.cards.count)
+            topic.dataPoints.append(dataPoint)
+            
+            dismiss()
+        }
     }
 }
+
+
 
 extension View {
     
@@ -68,5 +86,6 @@ extension View {
 }
 
 #Preview {
-    QuizView(cards: Topic.example.cards)
+    QuizView()
+        .environment(Topic.example)
 }
