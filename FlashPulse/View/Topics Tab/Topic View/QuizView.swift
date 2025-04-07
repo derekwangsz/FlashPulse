@@ -17,8 +17,8 @@ struct QuizView: View {
     @Environment(Topic.self) private var topic
     
     @State private var displayedCards: [Card] = []
-    
     @State private var numKnown = 0
+    @State private var isShowingSummaryView = false
     
     var body: some View {
         VStack {
@@ -30,28 +30,46 @@ struct QuizView: View {
                         .offset(CGSize(width: 0, height: i * 10))
                 }
             }
+            
+            if isShowingSummaryView {
+                VStack {
+                    Text("Quiz Completed!\n You knew \(numKnown)/\(topic.cards.count) cards!")
+                        .bold()
+                        .font(.headline)
+                        .multilineTextAlignment(.center)
+                    
+                    Button("OK") {
+                        dismiss()
+                    }
+                    .buttonStyle(.myAppPrimaryButton)
+                }
+            }
+            
             Spacer()
             
-            VStack {
-                HStack {
-                    
-                    Button("DON'T KNOW") {
-                        removeCard()
+            if !displayedCards.isEmpty {
+                VStack {
+                    HStack {
+                        
+                        Button("DON'T KNOW") {
+                            removeCard()
+                        }
+                        .buttonStyle(.myAppSecondaryButton)
+                        
+                        Button("KNOW") {
+                            numKnown += 1
+                            removeCard()
+                        }
+                        .buttonStyle(.myAppSecondaryButton)
                     }
-                    .buttonStyle(.myAppSecondaryButton)
                     
-                    Button("KNOW") {
-                        numKnown += 1
-                        removeCard()
+                    Button("Exit") {
+                        dismiss()
                     }
-                    .buttonStyle(.myAppSecondaryButton)
+                    .buttonStyle(.myAppPrimaryButton)
                 }
-                
-                Button("Exit") {
-                    dismiss()
-                }
-                .buttonStyle(.myAppPrimaryButton)
             }
+            
         }
         .onAppear {
             displayedCards = topic.cards.shuffled()
@@ -64,13 +82,15 @@ struct QuizView: View {
         withAnimation {
             displayedCards.removeFirst(1)
         }
+        // if we are out of cards, save statistics and dismiss QuizView
         if displayedCards.isEmpty {
-            // save statistics and dismiss
             topic.numAttempted += 1
-            let dataPoint = TopicDataPoint(attempt: topic.numAttempted, accuracyPercentage: numKnown / topic.cards.count)
+            let dataPoint = TopicDataPoint(attempt: topic.numAttempted, accuracyPercentage: numKnown / topic.cards.count * 100)
             topic.dataPoints.append(dataPoint)
             
-            dismiss()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                isShowingSummaryView = true
+            }
         }
     }
 }
