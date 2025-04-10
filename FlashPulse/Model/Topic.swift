@@ -24,5 +24,27 @@ final class Topic {
         self.dataPoints = dataPoints
     }
     
-    static let example = Topic(name: "Football", cards: [Card.example], dataPoints: [TopicDataPoint.example])
+    static let example = Topic(name: "Football",
+                               cards: [Card.example],
+                               dataPoints: [TopicDataPoint.example,
+                                            TopicDataPoint(attempt: 2, accuracyPercentage: 90),
+                                            TopicDataPoint(attempt: 3, accuracyPercentage: 70),
+                                            TopicDataPoint(attempt: 4, accuracyPercentage: 85),
+                                            TopicDataPoint(attempt: 5, accuracyPercentage: 60),
+                                            TopicDataPoint(attempt: 6, accuracyPercentage: 95)])
+}
+
+
+//MARK: - Topic Preview Mock Data Temporary Container
+extension Topic {
+    // Create a static property that returns a ModelContainer
+    //  for previews that get modelContext from the ENVIORNMENT
+    @MainActor
+    static var previewContainer: ModelContainer {
+        let container = try! ModelContainer(for: Topic.self,
+                                            configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        
+        container.mainContext.insert(Topic.example)
+        return container
+    }
 }
