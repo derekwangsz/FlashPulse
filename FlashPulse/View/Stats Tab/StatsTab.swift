@@ -32,7 +32,12 @@ struct StatsTab: View {
                             LineMark(x: .value("Attempt", dataPoint.attempt),
                                      y: .value("Score", dataPoint.accuracyPercentage))
                             .shadow(radius: 3, x: 2, y: 7)
+                            .symbol {
+                                Circle()
+                                    .frame(width: 6, height: 6)
+                            }
                         }
+                        
                         .aspectRatio(2, contentMode: .fit)
                         .chartYAxisLabel("Accuracy (%)")
                         .chartYScale(domain: 0...100)

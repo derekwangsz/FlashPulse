@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ED12C89A2D9DEDF0006DC2B6 /* ButtonStyleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED12C8992D9DEDF0006DC2B6 /* ButtonStyleExtension.swift */; };
+		ED7200062DA7813F00594E30 /* SwipeButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7200052DA7813F00594E30 /* SwipeButtonModifier.swift */; };
 		ED74248A2D9908530087968B /* AddCardSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7424892D9908530087968B /* AddCardSheet.swift */; };
 		ED74248D2D99992E0087968B /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED74248C2D99992E0087968B /* ColorExtension.swift */; };
 		EDA7F7C62D9847FD004C7873 /* FlashPulseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7F7C52D9847FD004C7873 /* FlashPulseApp.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		ED12C8992D9DEDF0006DC2B6 /* ButtonStyleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyleExtension.swift; sourceTree = "<group>"; };
+		ED7200052DA7813F00594E30 /* SwipeButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeButtonModifier.swift; sourceTree = "<group>"; };
 		ED7424892D9908530087968B /* AddCardSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardSheet.swift; sourceTree = "<group>"; };
 		ED74248C2D99992E0087968B /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		EDA7F7C22D9847FD004C7873 /* FlashPulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashPulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +67,7 @@
 			children = (
 				ED74248C2D99992E0087968B /* ColorExtension.swift */,
 				ED12C8992D9DEDF0006DC2B6 /* ButtonStyleExtension.swift */,
+				ED7200052DA7813F00594E30 /* SwipeButtonModifier.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				EDA7F7D62D984B4E004C7873 /* Topic.swift in Sources */,
 				EDA7F7DD2D9862FA004C7873 /* TopicCell.swift in Sources */,
 				ED74248D2D99992E0087968B /* ColorExtension.swift in Sources */,
+				ED7200062DA7813F00594E30 /* SwipeButtonModifier.swift in Sources */,
 				EDA7F7E12D986A5F004C7873 /* TopicsTab.swift in Sources */,
 				EDA7F7CA2D9847FD004C7873 /* Card.swift in Sources */,
 				EDA7F7C62D9847FD004C7873 /* FlashPulseApp.swift in Sources */,

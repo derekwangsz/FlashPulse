@@ -18,6 +18,9 @@ struct TopicsTab: View {
     
     @Namespace var nameSpace
     
+    @State private var showAddTopicSheet: Bool = false
+    @State private var newTopicTitle: String = ""
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -33,7 +36,7 @@ struct TopicsTab: View {
                                 .navigationTransition(.zoom(sourceID: "zoom", in: nameSpace))
                                 .environment(topic)
                         }
-                            
+                        
                     } label: {
                         TopicCell(topic: topic)
                             .background(LinearGradient(colors: gradientColours, startPoint: .topLeading, endPoint: .bottomTrailing))
@@ -44,29 +47,25 @@ struct TopicsTab: View {
             }
             .toolbar {
                 ToolbarItem {
-                    Button(action: addItem) {
+                    Button {
+                        showAddTopicSheet = true
+                    } label:{
                         Label("Add Topic", systemImage: "plus")
                     }
                 }
             }
-        }
-        
-    }
-    
-    
-    private func addItem() {
-        let newTopic = Topic.example
-        withAnimation {
-            modelContext.insert(newTopic)
-        }
-    }
-    
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(topics[index])
+            .alert("Enter Topic Name", isPresented: $showAddTopicSheet) {
+                TextField("Topic name", text: $newTopicTitle)
+                Button("Cancel", role: .cancel) { }
+                Button("OK") {
+                    withAnimation {
+                        modelContext.insert(Topic(name: newTopicTitle, cards: [], dataPoints: []))
+                    }
+                    newTopicTitle = ""
+                }
             }
         }
+        
     }
 }
 

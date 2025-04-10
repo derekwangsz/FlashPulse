@@ -9,7 +9,8 @@ import SwiftUI
 
 struct TopicCell: View {
     
-    var topic: Topic
+    @Environment(\.modelContext) var modelContext
+    @Bindable var topic: Topic
     
     var body: some View {
         ZStack {
@@ -25,6 +26,17 @@ struct TopicCell: View {
         .padding(.horizontal)
         .shadow(radius: 6, x: 6, y: 8)
         .padding(.vertical)
+        .swipeButtons([
+            CustomSwipeButton(image: Image(systemName: "trash.fill"), title: "Delete", color: .red, action: {
+                delete()
+            })
+        ])
+    }
+    
+    func delete() {
+        withAnimation {
+            modelContext.delete(topic)
+        }
     }
 }
 
