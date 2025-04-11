@@ -36,22 +36,25 @@ struct TopicView: View {
                 Text(topic.name)
                     .foregroundStyle(.primary)
                     .font(.title)
+                    .bold()
                     .padding(.horizontal, 60)
                     .padding(.vertical, 15)
-                    .background(.thinMaterial)
+                    .background(.thickMaterial)
                     .clipShape(Capsule())
                     .padding(.bottom, 10)
+                    .shadow(radius: 5, x:3, y:3)
                 
                 List {
                     ForEach(topic.cards) { card in
-                        HStack {
-                            TopicCard(card: card)
-                            
-                        }
+                        FlashCard(card: card)
                     }
                     .onDelete(perform: delete)
                 }
-                .listStyle(.insetGrouped)
+                .shadow(radius: 4, x:3, y:4)
+                .listStyle(.insetGrouped) // Remove default styling
+                .background(Color.clear) // Make background clear
+                .scrollContentBackground(.hidden)
+                
                 
                 Button("Start Quiz") {
                     startQuiz = true

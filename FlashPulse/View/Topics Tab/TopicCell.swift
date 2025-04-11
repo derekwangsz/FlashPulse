@@ -33,7 +33,7 @@ struct TopicCell: View {
         ])
     }
     
-    @MainActor
+    
     func delete() {
         withAnimation(.bouncy) {
             modelContext.delete(topic)

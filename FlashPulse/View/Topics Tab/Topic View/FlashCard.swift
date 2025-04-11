@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TopicCard: View {
+struct FlashCard: View {
     
     let card: Card
     
@@ -26,5 +26,5 @@ struct TopicCard: View {
 }
 
 #Preview {
-    TopicCard(card: Card.example)
+    FlashCard(card: Card.example)
 }
