@@ -26,22 +26,19 @@ struct TopicsTab: View {
             ScrollView {
                 ForEach(topics) { topic in
                     // we should pass in generated gradient colours here to both TopicView and TopicCell -> we generate gradient colour sets randomly?
-                    let gradientColours = [Color.random(), Color.random()]
                     
                     NavigationLink {
-                        ZStack {
-                            LinearGradient(colors: gradientColours, startPoint: .topLeading, endPoint: .bottomTrailing)
-                                .ignoresSafeArea(.all, edges: .top)
                             TopicView()
                                 .navigationTransition(.zoom(sourceID: "zoom", in: nameSpace))
                                 .environment(topic)
-                        }
-                        
                     } label: {
                         TopicCell(topic: topic)
-                            .background(LinearGradient(colors: gradientColours, startPoint: .topLeading, endPoint: .bottomTrailing))
+                            .background(LinearGradient(colors: topic.colours, startPoint: .topLeading, endPoint: .bottomTrailing))
                             .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
                             .matchedTransitionSource(id: "zoom", in: nameSpace)
+                    }
+                    .onAppear {
+                        print(topic.colours.count)
                     }
                 }
             }

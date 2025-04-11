@@ -7,16 +7,34 @@
 
 import Foundation
 import SwiftData
+import SwiftUI
 
 @Model
 final class Topic {
     var name: String
     var numAttempted = 0
+    
     @Relationship(deleteRule: .cascade, inverse: \Card.topic) var cards: [Card] = [Card]()
     // Every Topic has an array of Card objects
     
     @Relationship(deleteRule: .cascade, inverse: \TopicDataPoint.topic) var dataPoints: [TopicDataPoint] = [TopicDataPoint]()
     // Every Topic has an array of data points
+    
+    
+    
+    // random gradient colours
+    private var red1 = Double.random(in: 0...1)
+    private var green1 = Double.random(in: 0...1)
+    private var blue1 = Double.random(in: 0...1)
+    
+    private var red2 = Double.random(in: 0...1)
+    private var green2 = Double.random(in: 0...1)
+    private var blue2 = Double.random(in: 0...1)
+    
+    var colours: [Color] {
+        return [Color(red: red1, green: green1, blue: blue1),
+                Color(red: red2, green: green2, blue: blue2)]
+    }
     
     init(name: String, cards: [Card] = [], dataPoints: [TopicDataPoint] = []) {
         self.name = name

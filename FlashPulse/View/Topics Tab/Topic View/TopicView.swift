@@ -24,63 +24,69 @@ struct TopicView: View {
     
     
     var body: some View {
-        VStack {
-            HStack(alignment: .bottom) {
-                addButton
-                Spacer()
-                dismissButton
-            }
-            Text(topic.name)
+        ZStack {
+            LinearGradient(colors: topic.colours, startPoint: .topLeading, endPoint: .bottomTrailing)
+                .ignoresSafeArea(.all, edges: .top)
+            VStack {
+                HStack(alignment: .bottom) {
+                    addButton
+                    Spacer()
+                    dismissButton
+                }
+                Text(topic.name)
+                    .foregroundStyle(.primary)
+                    .font(.title)
+                    .padding(.horizontal, 60)
+                    .padding(.vertical, 15)
+                    .background(.thinMaterial)
+                    .clipShape(Capsule())
+                    .padding(.bottom, 10)
+                
+                List {
+                    ForEach(topic.cards) { card in
+                        HStack {
+                            TopicCard(card: card)
+                            
+                        }
+                    }
+                    .onDelete(perform: delete)
+                }
+                .listStyle(.insetGrouped)
+                
+                Button("Start Quiz") {
+                    startQuiz = true
+                }
+                .disabled(topic.cards.isEmpty)
                 .foregroundStyle(.primary)
-                .font(.title)
-                .padding(.horizontal, 60)
-                .padding(.vertical, 15)
+                .padding()
                 .background(.thinMaterial)
                 .clipShape(Capsule())
-                .padding(.bottom, 10)
-            
-            List {
-                ForEach(topic.cards) { card in
-                    HStack {
-                        TopicCard(card: card)
-                            
-                    }
-                }
-                .onDelete(perform: delete)
+                .shadow(radius: 2, x: 3, y: 7)
+                .padding(.top, 10)
+                
             }
-            .listStyle(.insetGrouped)
-            
-            Button("Start Quiz") {
-                startQuiz = true
+            .sheet(isPresented: $showAddCardSheet) {
+                AddCardSheet()
             }
-            .foregroundStyle(.primary)
-            .padding()
-            .background(.thinMaterial)
-            .clipShape(Capsule())
-            .shadow(radius: 2, x: 3, y: 7)
-            .padding(.top, 10)
-            
+            .fullScreenCover(isPresented: $startQuiz) {
+                QuizView()
+            }
+            .navigationBarBackButtonHidden()
+            .ignoresSafeArea(.all, edges: .top)
+            .statusBarHidden()
         }
-        .sheet(isPresented: $showAddCardSheet) {
-            AddCardSheet()
-        }
-        .fullScreenCover(isPresented: $startQuiz) {
-            QuizView()
-        }
-        .navigationBarBackButtonHidden()
-        .ignoresSafeArea(.all, edges: .top)
-        .statusBarHidden()
-//        .onScrollGeometryChange(for: Bool.self) { geometry in
-//            geometry.contentOffset.y < -50
-//        } action: { _, isTornOff in
-//            if isTornOff {
-//                dismiss()
-//            }
-//        }
+        //        .onScrollGeometryChange(for: Bool.self) { geometry in
+        //            geometry.contentOffset.y < -50
+        //        } action: { _, isTornOff in
+        //            if isTornOff {
+        //                dismiss()
+        //            }
+        //        }
     }
     
+    
     func delete(at offsets: IndexSet) {
-        withAnimation {
+        withAnimation(.bouncy) {
             topic.cards.remove(atOffsets: offsets)
         }
     }
