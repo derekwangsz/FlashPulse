@@ -28,7 +28,7 @@ struct StatsTab: View {
                     VStack {
                         Text(topic.name)
                             .font(.headline)
-                        Chart(topic.dataPoints) { dataPoint in
+                        Chart(topic.dataPoints.sorted()) { dataPoint in
                             LineMark(x: .value("Attempt", dataPoint.attempt),
                                      y: .value("Score", dataPoint.accuracyPercentage))
                             .shadow(radius: 3, x: 2, y: 7)

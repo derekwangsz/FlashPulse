@@ -24,3 +24,9 @@ final class TopicDataPoint {
     
     static let example = TopicDataPoint(attempt: 1, accuracyPercentage: 100)
 }
+
+extension TopicDataPoint: Comparable {
+    static func < (lhs: TopicDataPoint, rhs: TopicDataPoint) -> Bool {
+        return lhs.attempt < rhs.attempt
+    }
+}

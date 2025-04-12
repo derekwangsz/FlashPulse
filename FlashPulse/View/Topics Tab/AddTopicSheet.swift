@@ -33,14 +33,13 @@ struct AddTopicSheet: View {
                 
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Add") {
-                        if !topicTitle.isEmpty {
-                            withAnimation {
-                                modelContext.insert(Topic(name: topicTitle, cards: [], dataPoints: []))
-                            }
-                            isPresented = false
+                        let newTopic = Topic(name: topicTitle, cards: [], dataPoints: [])
+                        withAnimation {
+                            modelContext.insert(newTopic)
                         }
+                        isPresented = false
                     }
-                    .disabled(topicTitle.isEmpty)
+                    .disabled(topicTitle.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                 }
             }
             .onAppear {

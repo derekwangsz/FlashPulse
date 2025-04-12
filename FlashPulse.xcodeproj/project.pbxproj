@@ -30,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED02AF8B2DA96DE000AA8896 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		ED12C8992D9DEDF0006DC2B6 /* ButtonStyleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyleExtension.swift; sourceTree = "<group>"; };
 		ED7200052DA7813F00594E30 /* SwipeButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeButtonModifier.swift; sourceTree = "<group>"; };
 		ED7424892D9908530087968B /* AddCardSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardSheet.swift; sourceTree = "<group>"; };
@@ -74,13 +75,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		ED7424902D99ADA80087968B /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "View Model";
-			sourceTree = "<group>";
-		};
 		EDA7F7B92D9847FD004C7873 = {
 			isa = PBXGroup;
 			children = (
@@ -100,10 +94,10 @@
 		EDA7F7C42D9847FD004C7873 /* FlashPulse */ = {
 			isa = PBXGroup;
 			children = (
+				ED02AF8B2DA96DE000AA8896 /* Info.plist */,
 				EDA7F7C52D9847FD004C7873 /* FlashPulseApp.swift */,
 				EDA7F7DA2D9853B0004C7873 /* View */,
 				EDA7F7D92D9853A6004C7873 /* Model */,
-				ED7424902D99ADA80087968B /* View Model */,
 				ED74248B2D9999170087968B /* Extensions */,
 				EDA7F7DB2D9853CB004C7873 /* ViewModel */,
 				EDA7F7CB2D9847FF004C7873 /* Assets.xcassets */,
@@ -403,6 +397,7 @@
 				DEVELOPMENT_TEAM = ZXJ69DSW3S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlashPulse/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -433,6 +428,7 @@
 				DEVELOPMENT_TEAM = ZXJ69DSW3S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlashPulse/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

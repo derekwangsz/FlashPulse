@@ -62,11 +62,10 @@ struct TopicView: View {
                 .disabled(topic.cards.isEmpty)
                 .foregroundStyle(.primary)
                 .padding()
-                .background(.thinMaterial)
+                .background(topic.cards.isEmpty ? .thinMaterial : .ultraThickMaterial)
                 .clipShape(Capsule())
                 .shadow(radius: 2, x: 3, y: 7)
                 .padding(.top, 10)
-                
             }
             .sheet(isPresented: $showAddCardSheet) {
                 AddCardSheet()
@@ -94,7 +93,7 @@ struct TopicView: View {
         }
     }
     
-    
+    //MARK: - Views
     var addButton: some View {
         Button {
             showAddCardSheet = true
