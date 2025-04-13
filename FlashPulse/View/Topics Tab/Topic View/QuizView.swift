@@ -17,7 +17,7 @@ struct QuizView: View {
     @Environment(Topic.self) private var topic
     
     @State private var displayedCards: [Card] = []
-    @State private var numKnown = 0
+    @State private var numKnown : Double = 0
     @State private var isShowingSummaryView = false
     
     var body: some View {
@@ -33,7 +33,7 @@ struct QuizView: View {
             
             if isShowingSummaryView {
                 VStack {
-                    Text("Quiz Completed!\n You knew \(numKnown)/\(topic.cards.count) cards!")
+                    Text("Quiz Completed!\n You knew \(Int(numKnown))/\(topic.cards.count) cards!")
                         .bold()
                         .font(.headline)
                         .multilineTextAlignment(.center)
@@ -85,7 +85,8 @@ struct QuizView: View {
         // if we are out of cards, save statistics and dismiss QuizView
         if displayedCards.isEmpty {
             topic.numAttempted += 1
-            let dataPoint = TopicDataPoint(attempt: topic.numAttempted, accuracyPercentage: numKnown / topic.cards.count * 100)
+            let percentage = numKnown / Double(topic.cards.count)
+            let dataPoint = TopicDataPoint(attempt: topic.numAttempted, accuracyPercentage: Int(percentage * 100))
             topic.dataPoints.append(dataPoint)
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {

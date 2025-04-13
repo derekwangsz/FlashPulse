@@ -92,8 +92,12 @@ struct AddCardSheet: View {
                     }
                     
                     // Hint Image if there is one...
-                    selectedImage
-                        .scaledToFit()
+                    if selectedImage != nil {
+                        selectedImage!
+                            .resizable()
+                            .scaledToFit()
+                    }
+                    
                 }
                 
                 
