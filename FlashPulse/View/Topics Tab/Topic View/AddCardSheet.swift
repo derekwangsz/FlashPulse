@@ -55,6 +55,18 @@ struct AddCardSheet: View {
                         .multilineTextAlignment(.leading)
                 }
                 
+                Section("Answer of the flash card") {
+                    VStack {
+                        Text("Answer")
+                            .font(.title3)
+                            .fontDesign(.serif)
+                        TextField("Answer", text: $answer, prompt: Text("Answer of the flashcard..."))
+                            .font(.title)
+                            .lineLimit(2)
+                            .multilineTextAlignment(.leading)
+                    }
+                }
+                
                 Section("Hints if needed...") {
                     VStack {
                         Text("Your Hint...")
@@ -98,19 +110,6 @@ struct AddCardSheet: View {
                             .scaledToFit()
                     }
                     
-                }
-                
-                
-                Section("Answer of the flash card") {
-                    VStack {
-                        Text("Answer")
-                            .font(.title3)
-                            .fontDesign(.serif)
-                        TextField("Answer", text: $answer, prompt: Text("Answer of the flashcard..."))
-                            .font(.title)
-                            .lineLimit(2)
-                            .multilineTextAlignment(.leading)
-                    }
                 }
             }
         }
